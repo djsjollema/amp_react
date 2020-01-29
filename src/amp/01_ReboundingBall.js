@@ -9,9 +9,9 @@ class ReboundingBall extends React.Component {
     const canvas = this.refs.canvas
     const context = canvas.getContext('2d');
     canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    canvas.height = window.innerHeight-30;
 
-    let ball = new KineticBall(new Vector2d(400,400),100,new Vector2d(1,2));
+    let ball = new KineticBall(new Vector2d(400,400),30,"yellow",new Vector2d(6,5),);
 
     function loop(){
       context.clearRect(0,0,canvas.width,canvas.height)
@@ -26,6 +26,7 @@ class ReboundingBall extends React.Component {
 render() {
     return(
       <div>
+        <div className="menu">my menu</div>
         <canvas className='canvas' ref="canvas" />
       </div>
     )
