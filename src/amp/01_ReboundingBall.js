@@ -1,6 +1,7 @@
 import React from 'react'
 import Vector2d from './lib/Vector2d.js'
-import Ball from './lib/Ball.js'
+import Ball from './lib/Ball.js';
+import Grid from './lib/Grid.js';
 import './amp.css';
 
 class ReboundingBall extends React.Component {
@@ -12,9 +13,11 @@ class ReboundingBall extends React.Component {
     canvas.height = window.innerHeight-30;
 
     let ball = new Ball(new Vector2d(500,100),new Vector2d(5,0),new Vector2d(0,0.1),30,"white");
+    let grid = new Grid(20,20,100,100)
 
     function loop(){
-      context.clearRect(0,0,canvas.width,canvas.height)
+      context.clearRect(0,0,canvas.width,canvas.height);
+      grid.draw(canvas,context);
       ball.draw(context);
       ball.update(canvas);
     }

@@ -31,6 +31,7 @@ class Ball {
 
   draw(context){
     context.beginPath();
+    context.lineWidth = "5";
     context.fillStyle = this.color;
     context.arc(this.pos.dx,this.pos.dy,this.radius,0,2*Math.PI);
     context.stroke();
